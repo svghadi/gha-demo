@@ -1,0 +1,26 @@
+name: Build Image With Args
+
+on: [push]
+
+jobs:
+  build:
+    name: Build container image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login to Quay
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_TOKEN }}
+          registry: quay.io
+          
+      - name: Build Image
+        run: |
+          docker build --tag quay.io/siddhesh_ghadi/gha-demo:docker-args .
+      
+      - name: Push Image
+        run: |
+          docker push quay.io/siddhesh_ghadi/gha-demo:docker-args 
