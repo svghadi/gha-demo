@@ -47,4 +47,4 @@ jobs:
             --amend quay.io/siddhesh_ghadi/gha-demo:docker-args-ppc64le
 
           docker manifest inspect quay.io/siddhesh_ghadi/gha-demo:docker-args
-          docker push quay.io/siddhesh_ghadi/gha-demo:docker-args
+          docker manifest push quay.io/siddhesh_ghadi/gha-demo:docker-args
