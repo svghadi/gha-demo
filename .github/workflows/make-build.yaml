@@ -20,5 +20,7 @@ jobs:
       - name: Build & Push Image
         run: |
           export TAGS="quay.io/siddhesh_ghadi/gha-demo:makefile"
+          export DOCKER_CMD="docker buildx"
+          export EXTRA_OPTS="--push --platform linux/amd64,linux/ppc64le"
           make container
           make push
