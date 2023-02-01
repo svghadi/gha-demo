@@ -1,0 +1,24 @@
+name: Sample Workflow
+
+on: workflow_dispatch
+
+
+jobs:
+  amd_job:
+    name: Amd Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run commands
+        run: |
+          uname -a
+          arch
+  power_job:
+    name: Power Job
+    runs-on: ubuntu-latest-ppc64le
+    steps:
+      - name: Run commands
+        run: |
+          uname -a
+          arch 
+          
+          
