@@ -20,5 +20,15 @@ jobs:
         run: |
           uname -a
           arch 
+          sleep 1m
+  power_job1:
+    name: Power Job 1
+    runs-on: ubuntu-latest-ppc64le
+    steps:
+      - name: Run commands
+        run: |
+          uname -a
+          arch 
+          sleep 1m
           
           
